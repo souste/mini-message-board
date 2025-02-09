@@ -15,4 +15,11 @@ const messages = [
 
 indexRouter.get("/", (req, res) => res.render("index", { messages: messages }));
 
+indexRouter.get("/new", (req, res) => res.render("form"));
+
+indexRouter.post("/new", (req, res) => {
+  console.log(req.body);
+  res.send("Form Submitted");
+});
+
 module.exports = indexRouter;
