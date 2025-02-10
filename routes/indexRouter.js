@@ -13,7 +13,9 @@ const messages = [
   { text: "I'll Avennge him", user: "Erik ", added: new Date() },
 ];
 
-indexRouter.get("/", (req, res) => res.render("index", { messages: messages }));
+const link = { href: "/new", text: "NewMessage" };
+
+indexRouter.get("/", (req, res) => res.render("index", { messages: messages, link: link }));
 
 indexRouter.get("/new", (req, res) => res.render("form"));
 
