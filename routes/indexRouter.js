@@ -19,7 +19,10 @@ indexRouter.get("/new", (req, res) => res.render("form"));
 
 indexRouter.post("/new", (req, res) => {
   console.log(req.body);
-  res.send("Form Submitted");
+
+  messages.push({ user: req.body.userText, text: req.body.messageText, added: new Date() });
+
+  res.redirect("/");
 });
 
 module.exports = indexRouter;
