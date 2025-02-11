@@ -11,6 +11,7 @@
         <h3>USER: <%= messages[i].user %></h3>
         <p>Message: <%= messages[i].text %></p>
         <p>Date: <%= messages[i].added %></p>
+        <a href="/message/<%= i %>"> <button>Open</button></a>
       </li>
       <% } %>
     </ul>

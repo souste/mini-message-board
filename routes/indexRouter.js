@@ -19,6 +19,16 @@ indexRouter.get("/", (req, res) => res.render("index", { messages: messages, lin
 
 indexRouter.get("/new", (req, res) => res.render("form"));
 
+indexRouter.get("/message/:id", (req, res) => {
+  const messageId = parseInt(req.params.id);
+  const message = messages[messageId];
+
+  if (!message) {
+    return res.status(404).send("Message not found!!");
+  }
+  res.render("message", { message });
+});
+
 indexRouter.post("/new", (req, res) => {
   console.log(req.body);
 
